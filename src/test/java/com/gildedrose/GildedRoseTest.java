@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -130,6 +131,16 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
 
         assertEquals(0, gildedRose.items[0].quality);
+    }
 
+    @Ignore
+    @Test
+    public void
+    update_quality_conjured_item_quality_drops_by_2() {
+
+
+        Item[] items = new Item[]{new Item("Conjured", 10, 10)};
+        GildedRose gildedRose = new GildedRose(items);
+        assertEquals(8, gildedRose.items[0].quality);
     }
 }
